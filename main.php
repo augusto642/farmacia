@@ -77,6 +77,21 @@ $finalcode =  createRandomPassword();
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+    <script src="js/jquery.3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/demo.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Javascript method's body can be found in assets/js/demos.js
+            demo.initDashboardPageCharts();
+
+            demo.showNotification();
+
+        });
+    </script
+
 </head>
 <body>
 
@@ -198,6 +213,7 @@ $finalcode =  createRandomPassword();
 </body>
 
 <script src="js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/demo.js"></script>
@@ -210,6 +226,7 @@ $finalcode =  createRandomPassword();
 
     });
 </script
+
 
 
 </html>

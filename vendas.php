@@ -42,13 +42,8 @@
 
             <input type="hidden" name="pt" value="<?php echo $_GET['id']; ?>" />
             <input type="hidden" name="notaFiscal" value="<?php echo $_GET['notaFiscal']; ?>" />
-            <input type="text" name="assunto" id="assunto" placeholder="Pesquisar pelo assunto">
-
             <select name="produto" style="width:650px;height: 30px; "class="chzn-select" required>
                 <option></option>
-            <script>
-
-            </script>
                 <?php
 
                 $result = MySql::conectar()->prepare("SELECT * FROM tb_produtos");
@@ -61,11 +56,10 @@
                 }
                 ?>
             </select>
+
             <input type="number" name="qty" value="1" min="1" placeholder="Qty" autocomplete="off" style="width: 68px; height:30px; padding-top:4px; padding-bottom: 4px; margin-left: 10px; margin-right: 7px; font-size:15px;" / required>
             <Button type="submit" name="acao" class="btn btn-info" style="width: 123px; height:35px; margin-top:-5px;background-color: white" /><i class="icon-plus-sign icon-large"></i> Add</button>
         </form>
-        <br>
-        <br>
         <table class="table table-bordered tb-result"  data-responsive="table" style="background-color: white">
             <thead>
             <tr>

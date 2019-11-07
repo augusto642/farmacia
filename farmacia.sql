@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Out-2019 às 00:50
+-- Generation Time: 08-Nov-2019 às 00:07
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -152,12 +152,37 @@ INSERT INTO `tb_usuarios` (`id`, `nome`, `usuario`, `senha`, `cargo`) VALUES
 
 CREATE TABLE `tb_vendas` (
   `id` int(11) NOT NULL,
-  `valor` float NOT NULL,
+  `valor` varchar(11) NOT NULL,
   `data` date NOT NULL,
-  `vendedor` int(11) NOT NULL,
+  `vendedor` varchar(55) NOT NULL,
   `cliente` varchar(55) DEFAULT NULL,
-  `n_NotaFiscal` int(11) NOT NULL
+  `n_NotaFiscal` int(11) NOT NULL,
+  `pagamento` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_vendas`
+--
+
+INSERT INTO `tb_vendas` (`id`, `valor`, `data`, `vendedor`, `cliente`, `n_NotaFiscal`, `pagamento`) VALUES
+(1, '36', '2011-01-19', '0', 'Nao Identificado', 302320, 'Dinheiro'),
+(2, '36', '2011-01-19', '0', 'joao', 302320, 'Debito'),
+(3, '36', '2011-01-19', '0', 'joao', 302320, 'Debito'),
+(4, '36', '2011-01-19', '0', 'Nao Identificado', 302320, 'Dinheiro'),
+(5, '36', '2011-01-19', 'augusto', 'Nao Identificado', 302320, 'Debito'),
+(6, '36', '2011-01-19', 'augusto', 'Nao Identificado', 4732233, 'Dinheiro'),
+(7, '36', '2011-01-19', 'augusto', 'Nao Identificado', 4732233, 'Dinheiro'),
+(8, '18', '2011-01-19', 'augusto', 'Nao Identificado', 237222, 'Dinheiro'),
+(9, '18', '2011-01-19', 'augusto', 'joao', 237222, 'Debito'),
+(10, '18', '2011-01-19', 'augusto', 'Nao Identificado', 237222, 'Dinheiro'),
+(11, '32.4', '2011-01-19', 'augusto', 'Nao Identificado', 32402220, 'Dinheiro'),
+(12, '32.4', '2011-01-19', 'augusto', 'Nao Identificado', 32402220, 'Dinheiro'),
+(13, '32.4', '2011-01-19', 'augusto', 'Nao Identificado', 32402220, 'Dinheiro'),
+(14, '32.4', '2011-01-19', 'augusto', 'Nao Identificado', 32402220, 'Dinheiro'),
+(15, '32.4', '2011-01-19', 'augusto', 'Nao Identificado', 32402220, 'Dinheiro'),
+(16, '32.76', '2011-01-19', 'augusto', 'Nao Identificado', 32402220, 'Dinheiro'),
+(17, '35.64', '2011-07-19', 'augusto', 'Nao Identificado', 2739022, '36'),
+(18, '17.64', '2011-07-19', 'augusto', 'Nao Identificado', 22302, 'Dinheiro');
 
 -- --------------------------------------------------------
 
@@ -173,6 +198,79 @@ CREATE TABLE `tb_venda_produtos` (
   `quant` int(11) NOT NULL,
   `valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_venda_produtos`
+--
+
+INSERT INTO `tb_venda_produtos` (`id`, `n_nota_fiscal`, `codBarras`, `descricao`, `quant`, `valor`) VALUES
+(1, 32676, 777898888, 'remedio ', 3, 18),
+(2, 32676, 777898888, 'remedio ', 3, 18),
+(3, 32676, 777898888, 'remedio ', 3, 18),
+(4, 32676, 777898888, 'remedio ', 3, 18),
+(5, 32676, 777898888, 'remedio ', 3, 18),
+(6, 33075234, 777898888, 'remedio ', 3, 18),
+(7, 33075234, 777898888, 'remedio ', 3, 18),
+(8, 6962323, 777898888, 'remedio ', 3, 18),
+(9, 6962323, 777898888, 'remedio ', 3, 18),
+(10, 35037225, 777898888, 'remedio ', 1, 18),
+(11, 35037225, 777898888, 'remedio ', 1, 18),
+(12, 2333322, 777898888, 'remedio ', 1, 18),
+(13, 383422, 777898888, 'remedio ', 1, 18),
+(14, 383422, 777898888, 'remedio ', 2, 18),
+(15, 383422, 777898888, 'remedio ', 2, 18),
+(16, 2025723, 777898888, 'remedio ', 1, 18),
+(17, 32026, 777898888, 'remedio ', 1, 18),
+(18, 2933, 777898888, 'remedio ', 1, 18),
+(19, 22323333, 777898888, 'remedio ', 2, 18),
+(20, 22323333, 777898888, 'remedio ', 1, 18),
+(21, 22323333, 777898888, 'remedio ', 3, 18),
+(22, 2003692, 777898888, 'remedio ', 1, 18),
+(23, 2003692, 777898888, 'remedio ', 2, 18),
+(24, 2003692, 777898888, 'remedio ', 3, 18),
+(25, 3750383, 777898888, 'remedio ', 3, 18),
+(26, 3750383, 777898888, 'remedio ', 1, 18),
+(27, 0, 777898888, 'remedio ', 1, 18),
+(28, 0, 777898888, 'remedio ', 1, 18),
+(29, 233300, 777898888, 'remedio ', 1, 18),
+(30, 233300, 777898888, 'remedio ', 3, 18),
+(31, 92322, 777898888, 'remedio ', 1, 18),
+(32, 92322, 777898888, 'remedio ', 1, 18),
+(33, 92322, 777898888, 'remedio ', 3, 18),
+(34, 7232022, 777898888, 'remedio ', 3, 18),
+(35, 7232022, 777898888, 'remedio ', 1, 18),
+(36, 332203, 777898888, 'remedio ', 1, 18),
+(37, 332332, 777898888, 'remedio ', 1, 18),
+(38, 4022273, 777898888, 'remedio ', 2, 18),
+(39, 80, 777898888, 'remedio ', 1, 18),
+(40, 80, 777898888, 'remedio ', 3, 18),
+(41, 2022, 777898888, 'remedio ', 1, 18),
+(42, 2022, 777898888, 'remedio ', 2, 18),
+(43, 2022, 777898888, 'remedio ', 3, 18),
+(44, 2022, 777898888, 'remedio ', 3, 18),
+(45, 2022, 777898888, 'remedio ', 3, 18),
+(46, 93290233, 777898888, 'remedio ', 1, 18),
+(47, 93290233, 777898888, 'remedio ', 2, 18),
+(48, 0, 777898888, 'remedio ', 1, 18),
+(49, 3238092, 777898888, 'remedio ', 3, 18),
+(50, 3238092, 777898888, 'remedio ', 1, 18),
+(51, 330202, 777898888, 'remedio ', 2, 18),
+(52, 62450, 777898888, 'remedio ', 3, 18),
+(53, 220273, 777898888, 'remedio ', 1, 18),
+(54, 220273, 777898888, 'remedio ', 3, 18),
+(55, 332820, 777898888, 'remedio ', 1, 18),
+(56, 332820, 777898888, 'remedio ', 1, 18),
+(60, 3947225, 777898888, 'remedio ', 2, 18),
+(61, 6022033, 777898888, 'remedio ', 1, 18),
+(62, 23842, 777898888, 'remedio ', 3, 18),
+(63, 342232, 777898888, 'remedio ', 1, 18),
+(64, 302320, 777898888, 'remedio ', 2, 18),
+(65, 4732233, 777898888, 'remedio ', 2, 18),
+(66, 237222, 777898888, 'remedio ', 1, 18),
+(67, 32402220, 777898888, 'remedio ', 1, 18),
+(68, 32402220, 777898888, 'remedio ', 1, 18),
+(69, 2739022, 777898888, 'remedio ', 2, 18),
+(70, 22302, 777898888, 'remedio ', 1, 18);
 
 --
 -- Indexes for dumped tables
@@ -254,6 +352,18 @@ ALTER TABLE `tb_produtos`
 --
 ALTER TABLE `tb_usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_vendas`
+--
+ALTER TABLE `tb_vendas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `tb_venda_produtos`
+--
+ALTER TABLE `tb_venda_produtos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- Constraints for dumped tables

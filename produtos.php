@@ -24,7 +24,7 @@ foreach ($produtos as $value):
 
     <div id="top" class="row">
         <div class="col-sm-2">
-            <h2>Clientes</h2>
+            <h2>Produtos</h2>
         </div>
         <div class="col-sm-6" >
 
@@ -40,7 +40,7 @@ foreach ($produtos as $value):
         </div>
         <div class="col-sm-4 btn-lista">
             <a class="btn btn-primary" href="?pg=adicionar-produto"><i class="fa fa-plus"></i> Novo Cliente</a>
-            <a class="btn btn-default" href="?pg=produto"><i class="fa fa-refresh"></i> Atualizar</a>
+            <a class="btn btn-default" href="?pg=produtos"><i class="fa fa-refresh"></i> Atualizar</a>
         </div>
     </div>
 

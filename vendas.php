@@ -114,7 +114,7 @@
 
             </tbody>
         </table><br>
-        <a href=""><button class="btn btn-success btn-large btn-block"><i class="icon icon-save icon-large"></i> Salvar</button></a>
+        <a href="?pg=pagamento&notaFiscal=<?php echo $aa ?>&total=<?php echo $fgfg ?>"><button class="btn btn-success btn-large btn-block"><i class="icon icon-save icon-large"></i> Salvar</button></a>
     </div>
 </div>
 

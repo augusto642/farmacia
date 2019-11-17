@@ -58,9 +58,9 @@ $produto= $sql->fetch();
 <hr />
 <div id="actions" class="row">
     <div class="col-md-12">
-        <a href="?pg=produto" class="btn btn-primary">Fechar</a>
+        <a href="?pg=produtos" class="btn btn-primary">Fechar</a>
         <a href="?pg=editar-produto&id=<?php echo $produto['id']?>" class="btn btn-dark">Editar</a>
-        <a href="pg=produto&deletar=<?php echo $produto['id']?>" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+        <a href="pg=produto&deletar=<?php echo $produto['id']?>" class="btn btn-danger">Excluir</a>
     </div>
 </div>
 <br>

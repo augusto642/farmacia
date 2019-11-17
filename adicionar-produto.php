@@ -96,7 +96,7 @@ include ('classes/Mysql.php');
         <div class="row">
             <div class="col-md-12">
                 <button type="submit" name="acao" class="btn btn-primary">Salvar</button>
-                <a href="?pg=produtos" class="btn btn-default">Cancelar</a>
+                <a href="?pg=fornecedores" class="btn btn-default">Cancelar</a>
             </div>
         </div>
 

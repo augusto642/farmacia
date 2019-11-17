@@ -78,7 +78,7 @@ if(isset($_GET['id'])){
    <div class="col-md-12">
      <a href="?pg=cliente" class="btn btn-primary">Fechar</a>
 	 <a href="?pg=editar-cliente&id=<?php echo $cliente['id']?>" class="btn btn-dark">Editar</a>
-	 <a href="?pg=cliente&deletar=<?php echo $cliente['id']?>" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+	 <a href="?pg=cliente&deletar=<?php echo $cliente['id']?>" class="btn btn-danger">Excluir</a>
    </div>
  </div>
      <br>

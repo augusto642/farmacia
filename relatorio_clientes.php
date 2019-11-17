@@ -4,7 +4,7 @@
             <h5>Relatório de vendas por: <a href = "main.php?pg=relatorios">mês</a> / cliente</h5>
         </div>
     </div>
-    
+
     <div id="top" class="row">
         <div class="col-lg-5">
             <h2>Vendas por cliente</h2>
@@ -25,11 +25,9 @@
                 <tbody>
                     <?php
                         include ('classes/Mysql.php');
-
                         $query = "SET lc_time_names = 'pt_BR';";
                         $sql=MySql::conectar()->prepare($query);
                         $sql->execute();
-
                         $query =  "SELECT cli.nome as nome
                                         , REPLACE(ROUND(SUM(ven.valor), 2), '.', ',') AS val 
                                         , COUNT(cli.id) as qtd
@@ -42,12 +40,9 @@
                                 GROUP BY cli.id 
                                 
                                 ORDER BY cli.nome asc";
-
                         $sql=MySql::conectar()->prepare($query);
                         $sql->execute();
-
                         $produtos= $sql->fetchAll();
-
                         foreach ($produtos as $value):
                             echo "	<tr>
                                         <td>" . ucfirst($value['nome']) . "</td>

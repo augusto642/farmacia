@@ -18,18 +18,9 @@ if (isset( $_GET['deletar'] )) {
         </div>
         <div class="col-sm-6">
 
-            <div class="input-group h2">
-                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
-                <span class="input-group-btn">
-					<button class="btn btn-primary" type="submit">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
-            </div>
-
         </div>
         <div class="col-sm-4 btn-lista">
-            <a class="btn btn-primary" href="?pg=adicionar-usuario"><i class="fa fa-plus"></i> Novo Cliente</a>
+            <a class="btn btn-primary" href="?pg=adicionar-usuario"><i class="fa fa-plus"></i> Novo Usuário</a>
             <a class="btn btn-default" href="?pg=usuario"><i class="fa fa-refresh"></i> Atualizar</a>
         </div>
     </div>
@@ -47,7 +38,7 @@ if (isset( $_GET['deletar'] )) {
                 $sql->execute();
                 $usuarios= $sql->fetchAll();
 ?>
-               <?php foreach ($usuarios as $value) : ?>
+               
 
                 <thead>
                 <tr>
@@ -60,6 +51,7 @@ if (isset( $_GET['deletar'] )) {
                 </thead>
                 <tbody>
                 <tr>
+					<?php foreach ($usuarios as $value) : ?>
                     <td><?php echo $value['id']?></td>
                     <td><?php echo $value['nome']?></td>
                     <td><?php echo $value['cargo']?></td>

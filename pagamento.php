@@ -1,45 +1,25 @@
 <?php
 include( 'classes/Mysql.php' );
-$total = $_GET['total'];
-if (isset( $_POST['desconto'] )) {
-    $v = $_POST['desc'];
-    $t = $v / 100;
-    $resp = $total * $t;
-    $r = $total - $resp;
-    $total = $r;
-    $_SESSION['total'] = $total;
-}
 
 ?>
-<?php
 
-if (isset( $_POST['acao'] )) {
-    $valor = $_SESSION['total'];
-    $data = date( "m.d.y" );
-    $vendedor = $_SESSION['nome'];
-    $cliente = $_POST['cliente'];
-    $n_NotaFiscal = $_GET['notaFiscal'];
-    $pagamento = $_POST['pagamento'];
-
-    $sql = MySql::conectar()->prepare( "INSERT INTO `tb_vendas` VALUES (null,?,?,?,?,?,?)" );
-    $sql->execute( array($valor, $data, $vendedor, $cliente, $n_NotaFiscal, $pagamento) );
-}
-
-?>
 <div class="container-fluid">
+
+
     <div class="card" style="width: 800px; height: 450px; margin-left: 95px">
-        <form class="form-cliente" method="post" enctype="multipart/form-data">
+
+        <form id="finalizar" class="form-cliente" method="post" enctype="multipart/form-data" action="cupon-fiscal.php?cupon=<?php echo $_GET['notaFiscal']?>&total=<?php echo $_GET['total']?>">
             <div class="col-md-4 cc">
-                <label>Forma de Pagamento:
-                    <select name="pagamento" style="width: 200px">
+                <label>Forma de Pagamento
+                    <select name="pagamento" style="width: 150px;height: 25px;margin-left: 38px">
                         <option>Dinheiro</option>
-                        <option>Debito</option>
-                        <option>Credito</option>
+                        <option>Cartao Debito</option>
+                        <option>Cartao Credito</option>
                     </select></label>
                 <br>
                 <br>
-                <label>Cliente:
-                    <select name="cliente" style="width: 200px">
+                Cliente
+                    <select name="cliente" style="width: 140px;height: 25px">
                         <option>Nao Identificado</option>
                         <?php
                         $sql = MySql::conectar()->prepare( "SELECT * FROM tb_clientes" );
@@ -52,35 +32,25 @@ if (isset( $_POST['acao'] )) {
                         endforeach;
                         ?>
                     </select>
-                </label>
-                <button>Adicionar cliente</button>
-                <br>
-                <br>
-                <br>
-                <br>
-                <label>Total: </label> <input type="text" name="total" value="<?php echo $total; ?>" disabled>
                 <br/>
                 <br/>
-                <form class="form-pag" style="margin-top: 300px">
-                    <label>Desconto %</label> <input type="number" name="desc" style="width: 70px" min="0.00" max="10">
-                    <button type="submit" name="desconto" class="btn btn-primary" style="width: 80px; height: 32px">
-                        Aplicar
-                    </button>
-                    <br>
-                </form>
-                <br>
+                <br/>
+                <label>Total
+                    <input type="text" name="total" style="width: 150px" value="<?php echo $_GET['total']; ?>" disabled></label>
+                <br/>
+                <br/>
+
 
                 <br/>
                 <br/>
-                <a href="#"><button class="btn btn-success btn-large btn-block" name="acao"><i
-                                class="icon icon-save icon-large"></i> Finalizar
-                    </button>
-                </a>
-        </form>
-    </div>
+
+            <button type="submit" name="finalizar" style="background-color:#4caf50;color: white;border-color:#4caf50;cursor: pointer;width: 120px;height: 37px;margin-left: 100px;margin-top: 10px"> Finalizar</button>
+</form>
+            </div>
     <div class="col-md-3">
-        <div class="card" style="width: 350px; height: 350px; margin-left: 100px">
-            <h3>Lista de Compras:</h3>
+        <div class="card" style="width: 370px; height: 400px; margin-left: 100px;margin-top: 20px">
+            <br/>
+            <h3 style="margin-left: 60px">Lista de Compras</h3>
             <br>
             <table class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead>
@@ -93,7 +63,7 @@ if (isset( $_POST['acao'] )) {
                 </thead>
                 <?php
                 $n = $_GET['notaFiscal'];
-                $sql = MySql::conectar()->prepare( "SELECT * FROM tb_venda_produtos where n_nota_fiscal= $n" );
+                $sql = MySql::conectar()->prepare( "SELECT * FROM tb_venda_produtos where n_nota_fiscal= '$n'" );
                 $sql->execute();
                 $item = $sql->fetchAll();
 
@@ -120,7 +90,8 @@ if (isset( $_POST['acao'] )) {
 
         </div>
     </div>
-</div>
+<br/>
 
+</div>
 
 

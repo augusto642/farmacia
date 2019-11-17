@@ -1,5 +1,4 @@
 <?php
-
 include ('classes/Mysql.php');
 if (isset( $_GET['deletar'] )) {
     $id = (int)$_GET['deletar'];
@@ -16,7 +15,7 @@ $sql->execute();
 $clientes= $sql->fetchAll();
 
     ?>
-<?php foreach ($clientes as $value) : ?>
+
 
 
 <div class="lista-cliente">
@@ -27,24 +26,16 @@ $clientes= $sql->fetchAll();
         </div>
         <div class="col-sm-6" >
 
-            <div class="input-group h2">
-                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
-                <span class="input-group-btn">
-					<button class="btn btn-primary" type="submit">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
-            </div>
+
 
         </div>
         <div class="col-sm-4 btn-lista">
             <a class="btn btn-primary" href="?pg=adicionar-cliente"><i class="fa fa-plus"></i> Novo Cliente</a>
-            <a class="btn btn-default" href="?pg=cliente"><i class="fa fa-refresh"></i> Atualizar</a>
+            <a class="btn btn-default" href="?pg=cliente"><i class="fa fa-refresh"></i> Atualiza</a>
         </div>
     </div>
-
-
     <hr />
+	
     <div id="list" class="row">
 
         <div class="table-responsive col-md-12">
@@ -60,6 +51,7 @@ $clientes= $sql->fetchAll();
                 </thead>
                 <tbody>
                 <tr>
+					<?php foreach ($clientes as $value) : ?>
                     <td><?php echo $value['id']?></td>
                     <td><?php echo $value['nome']?></td>
                     <td><?php echo $value['cpf']?></td>

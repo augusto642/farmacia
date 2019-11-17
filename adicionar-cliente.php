@@ -8,15 +8,15 @@ include ('classes/Mysql.php');
 <?php
 
    if(isset($_POST['acao'])){
-    $nome=$_POST['nome'];
-    $cpf=$_POST['cpf'];
-$dataNascimento=$_POST['dataNascimento'];
-$endereco=$_POST['endereco'];
-$numero=$_POST['numero'];
-$bairro=$_POST['bairro'];
-$telefone=$_POST['telefone'];
-$celular=$_POST['celular'];
-$email=$_POST['email'];
+		$nome=$_POST['nome'];
+		$cpf=$_POST['cpf'];
+		$dataNascimento=$_POST['dataNascimento'];
+		$endereco=$_POST['endereco'];
+		$numero=$_POST['numero'];
+		$bairro=$_POST['bairro'];
+		$telefone=$_POST['telefone'];
+		$celular=$_POST['celular'];
+		$email=$_POST['email'];
 
         $sql = MySql::conectar()->prepare("INSERT INTO `tb_clientes` VALUES (null,?,?,?,?,?,?,?,?,?)");
         $sql->execute(array($cpf,$nome,$dataNascimento,$endereco,$numero,$bairro,$telefone,$celular,$email));

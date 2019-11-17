@@ -1,6 +1,5 @@
 <?php
 include ('classes/Mysql.php');
-include ('config.php');
 
 $id=$_GET['id'];
 $sql= MySql::conectar()->prepare("SELECT * FROM `tb_usuarios` where id=$id");

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('classes/Sistema.php');
+include( 'classes/Sistema.php' );
 ?>
 <?php
 
@@ -24,40 +24,25 @@ function createRandomPassword()
     return $pass;
 }
 
-$finalcode =  createRandomPassword();
-
+if (!function_exists( 'createRandomPassword' )) {
+    $finalcode = createRandomPassword();
+}
 ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
-                </div>
-                <div class="modal-body">
-                    Deseja realmente excluir este item?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Sim</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-                </div>
-            </div>
-        </div>
-    </div>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Farmacia</title>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+    <title>Farmacia</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
 
     <!-- Bootstrap core CSS     -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Animation library for notifications   -->
     <link href="css/animate.min.css" rel="stylesheet"/>
@@ -67,7 +52,7 @@ $finalcode =  createRandomPassword();
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="css/demo.css" rel="stylesheet" />
+    <link href="css/demo.css" rel="stylesheet"/>
 
     <link href="css/style.css" rel="stylesheet">
 
@@ -75,34 +60,19 @@ $finalcode =  createRandomPassword();
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="css/pe-icon-7-stroke.css" rel="stylesheet" />
-
-    <script src="js/jquery.3.2.1.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/demo.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Javascript method's body can be found in assets/js/demos.js
-            demo.initDashboardPageCharts();
-
-            demo.showNotification();
-
-        });
-    </script
+    <link href="css/pe-icon-7-stroke.css" rel="stylesheet"/>
 
 </head>
 <body>
 
 <div class="wrapper">
 
-    <div class="sidebar" data-color="purple" data-image="img/aa.jpeg">
+    <div class="sidebar" data-color="purple" data-image="img/aa.jpg">
 
 
-    	<div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">
             <div class="logo">
-              <img src="img/farmacia-logo.png" alt="logo" width="60px">
+                <img src="img/farmacia-logo.png" alt="logo" width="60px">
                 <p>Farmacia Gama</p>
             </div>
 
@@ -126,7 +96,7 @@ $finalcode =  createRandomPassword();
                     </a>
                 </li>
                 <li>
-                    <a href="?pg=vendas&notaFiscal=<?php echo $finalcode?>">
+                    <a href="?pg=vendas&notaFiscal=<?php echo $finalcode ?>">
                         <i class="pe-7s-cart"></i>
                         <p>Vendas</p>
                     </a>
@@ -150,13 +120,13 @@ $finalcode =  createRandomPassword();
                     </a>
                 </li>
                 <li>
-                    <a href="?pg=configuracao">
+                    <a href="?pg=extras">
                         <i class="pe-7s-tools"></i>
-                        <p>Configuarações</p>
+                        <p>Extras</p>
                     </a>
                 </li>
             </ul>
-    	</div>
+        </div>
     </div>
 
 
@@ -164,7 +134,8 @@ $finalcode =  createRandomPassword();
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -191,34 +162,35 @@ $finalcode =  createRandomPassword();
             <div class="container-fluid">
                 <div class="row">
                     <?php
-                  Sistema::carregarPagina();
+                    Sistema::carregarPagina();
                     ?>
 
+                </div>
             </div>
         </div>
-        </div>
-
 
 
         <footer class="footer">
             <div class="container-fluid">
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> Gama Sfotware
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>
+                    Gama Sfotware
                 </p>
             </div>
         </footer>
-
-
-
+    </div>
+</div>
 </body>
 
 <script src="js/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/demo.js"></script>
+<script src="assets/js/demo.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
+
+    $(document).ready(function () {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
 
@@ -226,7 +198,6 @@ $finalcode =  createRandomPassword();
 
     });
 </script
-
 
 
 </html>

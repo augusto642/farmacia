@@ -48,7 +48,7 @@ $id=$_GET['id'];
    <div class="col-md-12">
      <a href="?pg=usuario" class="btn btn-primary">Fechar</a>
 	 <a href="?pg=editar-usuario&id=<?php echo $usuario['id']?>" class="btn btn-dark">Editar</a>
-	 <a href="?pg=usuario&deletar=<?php echo $usuario['id']?>" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+	 <a href="?pg=usuario&deletar=<?php echo $usuario['id']?>" class="btn btn-danger">Excluir</a>
    </div>
  </div>
 

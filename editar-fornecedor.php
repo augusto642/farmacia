@@ -1,13 +1,14 @@
 <?php
-/*if(isset($_GET['id'])){
+include ('classes/Mysql.php');
+if(isset($_GET['id'])){
     $id= (int)$_GET['id'];
     $sql= MySql::conectar()->prepare("SELECT * FROM `tb_fornecedores` where id=$id");
     $sql->execute();
     $fornecedor= $sql->fetch();
 }
+?>
 
-*/
-$fornecedor=0?><!-- apagar   -->
+
 
 <div class="cadastro-cliente">
     <h3 class="page-header">Editar Fornecedor</h3>
@@ -37,7 +38,7 @@ $fornecedor=0?><!-- apagar   -->
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="exampleInputEmail1">Nome</label>
-                <input type="text" required type="text" class="form-control" name="nome" placeholder="Digite o Nome" value="<?php echo $fornecedor['nome'];?>">
+                <input type="text" required type="text" class="form-control" name="nome" value="<?php echo $fornecedor['nome'];?>">
             </div>
             <div class="form-group col-md-3">
                 <label for="exampleInputEmail1">Cnpj</label>
@@ -45,7 +46,7 @@ $fornecedor=0?><!-- apagar   -->
             </div>
             <div class="form-group col-md-3">
                 <label for="exampleInputEmail1">Inscrição Estadual</label>
-                <input type="number" required type="number" class="form-control" name="inscricao" placeholder="Digite a Inscrição Estadual value="<?php echo $fornecedor['inscricao'];?>"">
+                <input type="number" required type="number" class="form-control" name="inscricao" placeholder="Digite a Inscrição Estadual" value="<?php echo $fornecedor['inscricao'];?>">
             </div>
         </div>
 

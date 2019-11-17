@@ -7,9 +7,12 @@ class Sistema
     public static function carregarPagina()
     {
         if (isset( $_GET['pg'] )) {
-            include $_GET['pg'] . ".php"; // onde 'pg' é a variavel passada pela URL (GET)
-        } else {
+                include $_GET['pg'] . ".php";
+            // onde 'pg' é a variavel passada pela URL (GET)
+        }
+        else{
             include 'home.php'; //primeiro acesso, padrao 'home.php'
+
         }
     }
     public static function logado(){
@@ -18,4 +21,5 @@ class Sistema
     public static function loggout(){
         session_destroy();
     }
+
 }

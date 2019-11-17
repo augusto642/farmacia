@@ -46,11 +46,48 @@
 
 .h1-mensagem{
     margin-left: 40px;
-    padding-top: 90px;
     font-size: 45px;
 
 }
 .h2-mensagem{
     margin-left: 60px;
     font-size: 30px;
+}
+.tb-result{
+    margin-top: 10px;
+    padding-top: 5px;
+    background-color: white;
+}
+.btn btn-success btn-large btn-block{
+    background-color: #1c7430;
+}
+.cc{
+    margin-top: 50px;
+}
+.pag{
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 10px;
+}
+.pag input{
+    margin-top: 20px;
+}
+.form-pag{
+    margin-top: 100px;
+}
+.container-fluid label{
+    color: black;
+}
+.ff{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.ff label{
+    margin-left: 20px;
+    margin-top: 50px;
+}
+.pdf{
+    margin-left: 10px;
+    background-color: #fffa90;
+    width: 350px;
 }

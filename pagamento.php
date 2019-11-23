@@ -66,6 +66,7 @@ include( 'classes/Mysql.php' );
                 $sql = MySql::conectar()->prepare( "SELECT * FROM tb_venda_produtos where n_nota_fiscal= '$n'" );
                 $sql->execute();
                 $item = $sql->fetchAll();
+                $proID = array_column($item, 'codBarras');
 
                 foreach ( $item
 
@@ -75,15 +76,16 @@ include( 'classes/Mysql.php' );
 
                 <tbody>
                 <tr>
+
                     <td><?php echo $value['codBarras'] ?></td>
                     <td><?php echo $value['descricao'] ?></td>
                     <td><?php echo $value['quant'] ?></td>
                     <td><?php echo $value['valor'] ?></td>
-
                     <?php
                     endforeach;
                     ?>
-
+                    <?php
+                    ?>
                 </tr>
                 </tbody>
             </table>

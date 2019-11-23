@@ -5,7 +5,7 @@ $_SESSION['usuario']
 <div class="container-fluid">
     <div class="card" style="width: 800px;height: 520px;margin-left: 30px">
 
-        <div class="adicionar-usuario">
+        <div style="margin-left: 100px;width: 500px;padding-left: 40px">
             <br/>
             <h3 style="margin-top: 15px">Adicionar Lembrete</h3>
             <fieldset>
@@ -27,7 +27,7 @@ $_SESSION['usuario']
 
 
                     <div class="row">
-                        <div class=" col-md-4" style="height: 100px">
+                        <div class=" col-md-4" style="height: 100px;width: 250px">
                             <label for="exampleInputEmail1">Data para o Lembrete</label>
                             <input type="date" required type="text" class="form-control" name="data"
                                    placeholder="Digite a data que deve ser visto o lembrete">
@@ -43,7 +43,7 @@ $_SESSION['usuario']
                             </label>
                         </div>
                     </div>
-                    <hr/>
+<br/>
         </div>
         <div class="row">
             <div class="col-md-12"style="margin-left: 60px">

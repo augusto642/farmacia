@@ -16,20 +16,21 @@ if (isset( $_POST['finalizar'] )) {
     $sql = MySql::conectar()->prepare( "INSERT INTO `tb_vendas` VALUES (null,?,?,?,?,?,?)" );
     $sql->execute( array($valor, $data, $vendedor, $cliente, $n_NotaFiscal, $pagamento) );
 
-    if($cliente='Nao Identificado'){
+    if($cliente =='Nao Identificado'){
 
         $cliNome = "";
         $cliCpf = "";
         $cliEndereco ="" ;
         $cliTelefone = "";
+
     }else {
-        $query = MySql::conectar()->prepare( "SELECT * FROM tb_clientes where nome='$cliente'" );
-        $query->fetch();
+        $query = MySql::conectar()->prepare( "SELECT * FROM tb_clientes where nome= '$cliente'" );
+        $query->execute();
         $clientes = $query->fetch();
-        $cliNome = $cliente['nome'];
-        $cliCpf = $cliente['cpf'];
-        $cliEndereco = $cliente['endereco'];
-        $cliTelefone = $cliente['telefone'];
+        $cliNome = $clientes['nome'];
+        $cliCpf = $clientes['cpf'];
+        $cliEndereco = $clientes['endereco'];
+        $cliTelefone = $clientes['telefone'];
     }
     $quer=MySql::conectar()->prepare("SELECT * FROM tb_venda_produtos where n_nota_fiscal='$n_NotaFiscal'");
     $quer->execute();
@@ -123,7 +124,7 @@ if (isset( $_POST['finalizar'] )) {
     </tr>
     <tr>
             <th>Endereco:$cliEndereco</th>
-        <th> </th>
+        <th></th>
         <th></th>
         <th></th>
             <th> </th>

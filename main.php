@@ -24,9 +24,8 @@ function createRandomPassword()
     return $pass;
 }
 
-if (!function_exists( 'createRandomPassword' )) {
-    $finalcode = createRandomPassword();
-}
+$finalcode = createRandomPassword();
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -114,7 +113,7 @@ if (!function_exists( 'createRandomPassword' )) {
                     </a>
                 </li>
                 <li>
-                    <a href="?pg=relatorios">
+                    <a href="?pg=relatorio_clientes">
                         <i class="pe-7s-graph2"></i>
                         <p>Relatorios</p>
                     </a>
